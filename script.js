@@ -3,33 +3,33 @@ const footballTeam = {
     year: 2010,
     headCoach: "Sir Alex Ferguson",
     players: [
-        {name: "Edwin van der Sar", position: "goalkeeper"},
-        {name: "Rio Ferdinand", position: "defender"},
+        {name: "Edwin van der Sar", position: "goalkeeper", isCaptain: false},
+        {name: "Rio Ferdinand", position: "defender", isCaptain: false},
         {name: "Nemanja Vidić", position: "defender", isCaptain: true},
-        {name: "Patrice Evra", position: "defender"},
-        {name: "John O'Shea", position: "defender"},
-        {name: "Rafael", position: "defender"},
-        {name: "Fabio", position: "defender"},
-        {name: "Jonny Evans", position: "defender"},
-        {name: "Chris Smalling", position: "defender"},
-        {name: "Wes Brown", position: "defender"},
-        {name: "Ritchie De Laet", position: "defender"},
-        {name: "Ryan Giggs", position: "midfielder"},
-        {name: "Paul Scholes", position: "midfielder"},
-        {name: "Nani", position: "midfielder"},
-        {name: "Michael Carrick", position: "midfielder"},
-        {name: "Darren Fletcher", position: "midfielder"},
-        {name: "Antonio Valencia", position: "midfielder"},
-        {name: "Anderson", position: "midfielder"},
-        {name: "Park Ji-sung", position: "midfielder"},
-        {name: "Darron Gibson", position: "midfielder"},
-        {name: "Owen Hargreaves", position: "midfielder"},
-        {name: "Wayne Rooney", position: "forward"},
-        {name: "Dimitar Berbatov", position: "forward"},
-        {name: "Javier Hernández", position: "forward"},
-        {name: "Michael Owen", position: "forward"},
-        {name: "Federico Macheda", position: "forward"},
-        {name: "Gabriel Obertan", position: "forward"}
+        {name: "Patrice Evra", position: "defender", isCaptain: false},
+        {name: "John O'Shea", position: "defender", isCaptain: false},
+        {name: "Rafael", position: "defender", isCaptain: false},
+        {name: "Fabio", position: "defender", isCaptain: false},
+        {name: "Jonny Evans", position: "defender", isCaptain: false},
+        {name: "Chris Smalling", position: "defender", isCaptain: false},
+        {name: "Wes Brown", position: "defender", isCaptain: false},
+        {name: "Ritchie De Laet", position: "defender", isCaptain: false},
+        {name: "Ryan Giggs", position: "midfielder", isCaptain: false},
+        {name: "Paul Scholes", position: "midfielder", isCaptain: false},
+        {name: "Nani", position: "midfielder", isCaptain: false},
+        {name: "Michael Carrick", position: "midfielder", isCaptain: false},
+        {name: "Darren Fletcher", position: "midfielder", isCaptain: false},
+        {name: "Antonio Valencia", position: "midfielder", isCaptain: false},
+        {name: "Anderson", position: "midfielder", isCaptain: false},
+        {name: "Park Ji-sung", position: "midfielder", isCaptain: false},
+        {name: "Darron Gibson", position: "midfielder", isCaptain: false},
+        {name: "Owen Hargreaves", position: "midfielder", isCaptain: false},
+        {name: "Wayne Rooney", position: "forward", isCaptain: false},
+        {name: "Dimitar Berbatov", position: "forward", isCaptain: false},
+        {name: "Javier Hernández", position: "forward", isCaptain: false},
+        {name: "Michael Owen", position: "forward", isCaptain: false},
+        {name: "Federico Macheda", position: "forward", isCaptain: false},
+        {name: "Gabriel Obertan", position: "forward", isCaptain: false}
     ]
 };
 
@@ -54,7 +54,7 @@ footballTeam.players.forEach(player => {
     playerPosition.textContent = `Position: ${player.position}`;
     playerCard.appendChild(playerPosition);
 
-    if (player.isCaptain) {
+    if (player.isCaptain === true) {
         playerName.textContent = "(Captain) " + playerName.textContent;
     }
 
@@ -77,7 +77,7 @@ players.addEventListener("change", (event) => {
             playerPosition.textContent = `Position: ${player.position}`;
             playerCard.appendChild(playerPosition);
 
-            if (player.isCaptain) {
+            if (player.isCaptain === true) {
                 playerName.textContent = "(Captain) " + playerName.textContent;
             }
 
@@ -99,7 +99,7 @@ players.addEventListener("change", (event) => {
                 playerPosition.textContent = `Position: ${player.position}`;
                 playerCard.appendChild(playerPosition);
 
-                if (player.isCaptain) {
+                if (player.isCaptain === true) {
                     playerName.textContent = "(Captain) " + playerName.textContent;
                 }
 
