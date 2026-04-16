@@ -41,3 +41,69 @@ const playersList = document.getElementById("player-cards");
 team.textContent = footballTeam.team;
 year.textContent = footballTeam.year;
 headCoach.textContent = footballTeam.headCoach;
+
+footballTeam.players.forEach(player => {
+    const playerCard = document.createElement("div");
+    playerCard.classList.add("player-card");
+
+    const playerName = document.createElement("h2");
+    playerName.textContent = player.name;
+    playerCard.appendChild(playerName);
+
+    const playerPosition = document.createElement("p");
+    playerPosition.textContent = `Position: ${player.position}`;
+    playerCard.appendChild(playerPosition);
+
+    if (player.isCaptain) {
+        playerName.textContent = "(Captain) " + playerName.textContent;
+    }
+
+    playersList.appendChild(playerCard);
+});
+
+
+players.addEventListener("change", (event) => {
+    if (event.target.value === "all") {
+        playersList.innerHTML = "";
+        footballTeam.players.forEach(player => {
+            const playerCard = document.createElement("div");
+            playerCard.classList.add("player-card");
+
+            const playerName = document.createElement("h2");
+            playerName.textContent = player.name;
+            playerCard.appendChild(playerName);
+
+            const playerPosition = document.createElement("p");
+            playerPosition.textContent = `Position: ${player.position}`;
+            playerCard.appendChild(playerPosition);
+
+            if (player.isCaptain) {
+                playerName.textContent = "(Captain) " + playerName.textContent;
+            }
+
+            playersList.appendChild(playerCard);
+        });
+    } else {
+        playersList.innerHTML = "";
+        footballTeam.players
+            .filter(player => player.position === event.target.value)
+            .forEach(player => {
+                const playerCard = document.createElement("div");
+                playerCard.classList.add("player-card");
+
+                const playerName = document.createElement("h2");
+                playerName.textContent = player.name;
+                playerCard.appendChild(playerName);
+
+                const playerPosition = document.createElement("p");
+                playerPosition.textContent = `Position: ${player.position}`;
+                playerCard.appendChild(playerPosition);
+
+                if (player.isCaptain) {
+                    playerName.textContent = "(Captain) " + playerName.textContent;
+                }
+
+                playersList.appendChild(playerCard);
+            });
+    }   
+});
